@@ -355,7 +355,7 @@ class Router {
             $uri = preg_replace('/' . preg_quote($match) . '/', array_get($args, $matches[1][$id], $match), $uri, 1);
         }
 
-        return home_url() . '/' . $uri;
+        return home_url('', $this->http->getScheme()) . '/' . $uri;
     }
 
     /**
